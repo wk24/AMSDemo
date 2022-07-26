@@ -1,0 +1,54 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'groovy'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //gradle sdk
+    implementation gradleApi()
+    //groovy sdk
+    implementation localGroovy()
+
+    implementation 'org.ow2.asm:asm:7.2'
+    implementation 'org.ow2.asm:asm-commons:7.2'
+    implementation 'org.ow2.asm:asm-analysis:7.2'
+    implementation 'org.ow2.asm:asm-util:7.2'
+    implementation 'org.ow2.asm:asm-tree:7.2'
+    implementation 'com.android.tools.build:gradle:4.1.2', {
+        exclude group:'org.ow2.asm'
+    }
+//    implementation group: 'org.ow2.asm', name: 'asm-commons', version: '9.2'
+
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.wuk'
+            artifactId = 'amsplugin'
+            version='1.0.9'
+//            repository(url: uri('./ams_plugin'))
+//            url = "./ams_plugin"
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url = "./ams_plugin"
+        }
+    }
+}
+
