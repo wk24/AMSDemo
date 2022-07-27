@@ -1,5 +1,7 @@
 package com.wuk.amsdemo;
 
+import android.util.Log;
+
 /**
  * @author: bincao2
  * @date: 2022/1/27 13:38
@@ -13,6 +15,7 @@ public class Test {
     public static final String TAG = "Test.class ";
 
     void test() {
+        Log.e(TAG, "test: 点击成功,创建test并调用方法" );
     }
 
 }

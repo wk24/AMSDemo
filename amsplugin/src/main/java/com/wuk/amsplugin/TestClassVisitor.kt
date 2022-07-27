@@ -45,10 +45,10 @@ class TestClassVisitor(classVisitor: ClassVisitor) : ClassVisitor(Opcodes.ASM7, 
         println("$TAG method = $methodName")
         println("$TAG className = $className")
 
-        if (className == "com/wuk/amsdemo/Test" && methodName == "test") {
+//        if (className == "com/wuk/amsdemo/Test" && methodName == "test") {
             return CustomizeMethodVisitor(api, methodVisitor, className, methodAccess, methodName, methodDescriptor)
-        }
-
-        return methodVisitor
+//        }
+//
+//        return methodVisitor
     }
 }

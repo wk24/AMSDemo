@@ -1,6 +1,7 @@
 package com.wuk.amsdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,10 +15,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         View viewById = findViewById(R.id.tv);
-        viewById.setOnClickListener(v ->{
-            //执行插桩
-            Test test = new Test();
-            test.test();
+//        viewById.setOnClickListener(v ->{
+//            //执行插桩
+//            Test test = new Test();
+//            test.test();
+//        });
+        viewById.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //执行插桩
+                Test test = new Test();
+                test.test();
+            }
         });
 
     }

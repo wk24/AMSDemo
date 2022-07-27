@@ -37,7 +37,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.wuk'
             artifactId = 'amsplugin'
-            version='1.0.9'
+            version='1.1.0'
 //            repository(url: uri('./ams_plugin'))
 //            url = "./ams_plugin"
             from components.java
